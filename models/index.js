@@ -1,11 +1,11 @@
 const { model } = require('mongoose')
-const CusineSchema = require('./cusine')
+const CuisineSchema = require('./cuisine')
 const RecipeSchema = require('./recipe')
 
-const Cusine = model('cusines', CusineSchema)
+const Cuisine = model('cuisines', CuisineSchema)
 const Recipe = model('recipes', RecipeSchema)
 
 module.exports = {
-  Cusine,
+  Cuisine,
   Recipe
 }
