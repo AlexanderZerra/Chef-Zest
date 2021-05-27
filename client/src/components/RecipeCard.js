@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 
 class RecipeCard extends Component {
   render() {
+    const { recipe } = this.props
     return (
-      <div>
-        <img
-          alt="spaghetti"
-          src="https://a7m3f5i5.rocketcdn.me/wp-content/uploads/2015/09/moms-spaghetti-sauce-recipe-a-healthy-slice-of-life-6-of-6-800x600.jpg"
-        />
-        {/* <h2> {recipe.country}</h2> */}
+      <div className="recipe-card" onClick={() => this.props.showCard(recipe)}>
+        <img src={recipe.image} alt={recipe.name} />
+        <h2>{recipe.name}</h2>
+        <h3>{recipe.cuisine}</h3>
+        <h4>{recipe.description}</h4>
+        <p>{recipe.ingredients}</p>
+        <p>{recipe.instructions}</p>
+        <p>{recipe.time}</p>
         <h3>spaghetti</h3>
 
         <p>20min</p>
