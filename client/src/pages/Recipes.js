@@ -1,7 +1,19 @@
 import React, { Component } from 'react'
 import RecipeCard from '../components/RecipeCard'
+import ApiClient from '../Globals'
 
 class Recipes extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      recipes: this.props.recipes
+    }
+  }
+  async componentDidMount() {
+    const res = await ApiClient.get('/recipes')
+    console.log(res)
+    this.setState({ recipes: res.data.recipes })
+  }
   showRecipe = (recipe) => {
     //console.log(recipe)
     //console.log(recipe._id)
@@ -9,9 +21,9 @@ class Recipes extends Component {
   }
 
   render() {
-    const { recipes } = this.props
+    //const { recipes } = this.props
 
-    const recipeLists = recipes.map((recipe, index) => {
+    const recipeLists = this.state.recipes.map((recipe, index) => {
       return (
         <RecipeCard
           key={index}
