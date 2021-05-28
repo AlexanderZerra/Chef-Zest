@@ -29,11 +29,6 @@ class CreateRecipe extends Component {
   }
 
   render() {
-    console.log(this.state)
-    const { recipe } = this.props
-
-    const newRecipe = this.props.newRecipe
-
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -45,13 +40,6 @@ class CreateRecipe extends Component {
         />
         <input
           type="text"
-          value={this.state.image}
-          onChange={this.handleChange}
-          name="image"
-          placeholder="image"
-        />
-        <input
-          type="text-area"
           value={this.state.description}
           onChange={this.handleChange}
           name="description"
@@ -59,10 +47,38 @@ class CreateRecipe extends Component {
         />
         <input
           type="text"
+          value={this.state.cuisine}
+          onChange={this.handleChange}
+          name="cuisine"
+          placeholder="cuisine"
+        />
+        <input
+          type="text"
+          value={this.state.image}
+          onChange={this.handleChange}
+          name="image"
+          placeholder="image"
+        />
+        <input
+          type="text-area"
+          value={this.state.ingredients}
+          onChange={this.handleChange}
+          name="ingredients"
+          placeholder="ingredients"
+        />
+        <input
+          type="text-area"
+          value={this.state.instructions}
+          onChange={this.handleChange}
+          name="instructions"
+          placeholder="instructions"
+        />
+        <input
+          type="number"
           value={this.state.time}
           onChange={this.handleChange}
           name="time"
-          placeholder="time"
+          placeholder="cook time in minutes"
         />
         <button type="submit">Submit</button>
       </form>
