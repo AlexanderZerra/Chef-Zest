@@ -17,9 +17,8 @@ export default class RecipeDetails extends Component {
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        {/* <p>{recipe.ingredients}</p> */}
+
         <ul>
-          {/* <p className="instructions">{recipe.instructions}</p> */}
           {recipe.instructions.map((instruction, index) => (
             <li key={index}>{instruction}</li>
           ))}
