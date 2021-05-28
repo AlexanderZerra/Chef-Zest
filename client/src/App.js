@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import ApiClient from './Globals'
-import CreateRecipe from './pages/CreateRecipe'
 import NewRecipes from './pages/NewRecipes'
 import RecipeDetails from './pages/RecipeDetails'
 
@@ -30,11 +29,8 @@ class App extends Component {
   }
   selectRecipe = (recipe) => {
     console.log('hi')
-    //console.log(recipe._id)
     console.log(recipe)
     this.setState({ selectedRecipes: recipe })
-    //console.log(this.state.history)
-    //this.props.history.push(`/recipes/${recipe._id}`)
   }
   render() {
     return (
@@ -44,8 +40,6 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" component={Welcome} />
-          {/* <Route exact path="/recipes" component={Recipes} /> */}
-          <Route exact path="/new" component={CreateRecipe} />
           <Route exact path="/createNew" component={NewRecipes} />
           <Route
             exact
@@ -70,8 +64,6 @@ class App extends Component {
             )}
           />
         </Switch>
-        {/* <Recipes recipes={this.state.recipes} /> */}
-        {/* <CreateRecipe /> */}
       </div>
     )
   }

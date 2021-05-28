@@ -15,14 +15,10 @@ class Recipes extends Component {
     this.setState({ recipes: res.data.recipes })
   }
   showRecipe = (recipe) => {
-    //console.log(recipe)
-    //console.log(recipe._id)
     this.props.history.push(`/recipes/${recipe._id}`)
   }
 
   render() {
-    //const { recipes } = this.props
-
     const recipeLists = this.state.recipes.map((recipe, index) => {
       return (
         <RecipeCard
