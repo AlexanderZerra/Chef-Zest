@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ApiClient from '../Globals'
+import '../recipeForm.css'
 
 class NewRecipes extends Component {
   constructor() {
@@ -68,76 +69,84 @@ class NewRecipes extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          value={this.state.name}
-          onChange={this.handleChange}
-          name="name"
-          placeholder="name"
-        />
-        <input
-          type="text"
-          value={this.state.description}
-          onChange={this.handleChange}
-          name="description"
-          placeholder="description"
-        />
-        <input
-          type="text"
-          value={this.state.cuisine}
-          onChange={this.handleChange}
-          name="cuisine"
-          placeholder="cuisine"
-        />
-        <input
-          type="text"
-          value={this.state.image}
-          onChange={this.handleChange}
-          name="image"
-          placeholder="image"
-        />
-        <input
-          type="number"
-          value={this.state.time}
-          onChange={this.handleChange}
-          name="time"
-          placeholder="cook time in minutes"
-        />
-        <input
-          type="text-area"
-          value={this.state.currentIngredient}
-          onChange={this.handleChange}
-          name="currentIngredient"
-          placeholder="ingredients"
-        />
-        <button className="additional" onClick={this.handleAddIngred}>
-          Add ingredient
-        </button>
-        <ul>
-          {this['state']['ingredients'].map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
-        <input
-          type="text-area"
-          value={this.state.currentInstruction}
-          onChange={this.handleChange}
-          name="currentInstruction"
-          placeholder="instructions"
-        />
-        <button className="add" onClick={this.handleAddInstr}>
-          Add instructions
-        </button>
-        <ol>
-          {this['state']['instructions'].map((instruction, index) => (
-            <li key={index}>{instruction}</li>
-          ))}
-        </ol>
+      <div className="new-recipe">
+        <div className="recipe-input-form">
+          <div className="top-inputs">
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleChange}
+              name="name"
+              placeholder="recipe name"
+            />
+            <input
+              type="text"
+              value={this.state.cuisine}
+              onChange={this.handleChange}
+              name="cuisine"
+              placeholder="cuisine"
+            />
+            <input
+              type="number"
+              value={this.state.time}
+              onChange={this.handleChange}
+              name="time"
+              placeholder="cook time in minutes"
+            />
+          </div>
+          <div className="middle-inputs">
+            <input
+              type="text"
+              value={this.state.description}
+              onChange={this.handleChange}
+              name="description"
+              placeholder="description"
+            />
+            <input
+              type="text"
+              value={this.state.image}
+              onChange={this.handleChange}
+              name="image"
+              placeholder="image url"
+            />
+          </div>
+          <div className="bottom-inputs">
+            <input
+              type="text-area"
+              value={this.state.currentIngredient}
+              onChange={this.handleChange}
+              name="currentIngredient"
+              placeholder="ingredients"
+            />
+            <button className="additional-items" onClick={this.handleAddIngred}>
+              Add ingredient
+            </button>
+            <ul className="form-ingredient-list">
+              {this['state']['ingredients'].map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+            <input
+              type="text-area"
+              value={this.state.currentInstruction}
+              onChange={this.handleChange}
+              name="currentInstruction"
+              placeholder="instructions"
+            />
+            <button className="additional-items" onClick={this.handleAddInstr}>
+              Add instructions
+            </button>
+            <ol className="form-instruction-list">
+              {this['state']['instructions'].map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
+            </ol>
+          </div>
 
-        <button className="submit" onClick={this.handleSubmit}>
-          Submit
-        </button>
+          <button className="submit" onClick={this.handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
     )
   }
