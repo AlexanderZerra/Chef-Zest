@@ -8,19 +8,22 @@ export default class RecipeDetails extends Component {
     return recipe ? (
       <div>
         <img src={recipe.image} alt={recipe.name} />
-        <h2>{recipe.name}</h2>
-        <h3>{recipe.cuisine}</h3>
-        <h4>{recipe.description}</h4>
-        <p>Total Time: {recipe.time} minutes</p>
-        <p>hi</p>
-        <ul>
+        <h2 className="recipename">{recipe.name}</h2>
+        <h3 className="recipecuisine">{recipe.cuisine}</h3>
+        <h4 className="recipedescription">{recipe.description}</h4>
+        <p className="time">Total Time: {recipe.time} minutes</p>
+        <ul className="ingredientlist">
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
 
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.instructions}</p>
+        {/* <p>{recipe.ingredients}</p> */}
+        <ul>
+          {recipe.instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
+          ))}
+        </ul>
       </div>
     ) : null
   }
