@@ -50,6 +50,28 @@ const main = async () => {
       ingredients: ['test ingred', 'test ingred'],
       instructions: ['test instruction 1', 'test instruction 2'],
       time: 30
+    },
+    {
+      name: 'Teriyaki Chicken Thighs',
+      description: 'Easy chicken thighs cooked in a cast iron pan',
+      cuisine: asian._id,
+      image:
+        'https://www.tasteandtellblog.com/wp-content/uploads/2016/08/Cast-Iron-Teriyaki-Chicken-Thighs-tasteandtellblog.com-2.jpg',
+      ingredients: [
+        '8 bone-in chicken thighs',
+        'salt and pepper',
+        '1 T veggie oil',
+        '1/2 c soy sauce',
+        '1/2 c',
+        '1/2 c sugar',
+        '2 T mirin',
+        '1 clove garlic, minced',
+        '1 t freshly grated ginger',
+        '1/2 t cornstarch',
+        '2 green onions'
+      ],
+      instructions: ['test instruction 1', 'test instruction 2'],
+      time: 45
     }
   ]
 
