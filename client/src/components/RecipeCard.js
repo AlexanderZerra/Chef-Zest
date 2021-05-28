@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 class RecipeCard extends Component {
   render() {
+    console.log(this.props)
     const { recipe } = this.props
+
     return (
       <div className="recipe-card" onClick={() => this.props.showCard(recipe)}>
         <img src={recipe.image} alt={recipe.name} />
@@ -12,9 +14,6 @@ class RecipeCard extends Component {
         <p>{recipe.ingredients}</p>
         <p>{recipe.instructions}</p>
         <p>{recipe.time}</p>
-        <h3>spaghetti</h3>
-
-        <p>20min</p>
       </div>
     )
   }
