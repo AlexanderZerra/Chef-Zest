@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { BASE_URL } from './Globals'
-
-import axios from 'axios'
+import ApiClient from './Globals'
+import CreateRecipe from './pages/CreateRecipe'
 
 import Welcome from './pages/Welcome'
 import Recipes from './pages/Recipes'
@@ -21,8 +20,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get(`${BASE_URL}/api/recipes`)
-    this.setState({ recipes: res.data.results })
+    const res = await ApiClient.get('/recipes')
+    console.log(res)
+    this.setState({ recipes: res.data.recipes })
   }
 
   render() {
@@ -30,8 +30,19 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/recipes" component={Recipes} />
+          {/* <Route exact path="/recipes" component={Recipes} /> */}
+          <Route exact path="/new" component={CreateRecipe} />
+
+          <Route
+            exact
+            path="/recipes"
+            component={(props) => (
+              <Recipes {...props} recipes={this.state.recipes} />
+            )}
+          />
         </Switch>
+        {/* <Recipes recipes={this.state.recipes} /> */}
+        {/* <CreateRecipe /> */}
       </div>
     )
   }
