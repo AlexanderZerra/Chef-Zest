@@ -1,17 +1,6 @@
 import React, { Component } from 'react'
 
 export default class RecipeDetails extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  // componentDidMount() {
-  //   let selectedRecipe = this.props.recipe.find(
-  //     (recipe) => recipe.id === parseInt(this.props.match.params.id)
-  //   )
-  //   this.setState({ recipe: selectedRecipe })
-  // }
-
   render() {
     const recipe = this.props.selectedRecipes
     console.log('in details')
