@@ -54,7 +54,6 @@ img {
 .navbar {
   justify-content: space-between;
   align-items: center;
-  /* background-color: blue; */
 
   margin-bottom: 15px;
   min-height: 2em;
