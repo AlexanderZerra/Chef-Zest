@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import ApiClient from './Globals'
 import CreateRecipe from './pages/CreateRecipe'
+import NewRecipes from './pages/NewRecipes'
 
 import Welcome from './pages/Welcome'
 import Recipes from './pages/Recipes'
@@ -32,7 +33,7 @@ class App extends Component {
           <Route exact path="/" component={Welcome} />
           {/* <Route exact path="/recipes" component={Recipes} /> */}
           <Route exact path="/new" component={CreateRecipe} />
-
+          <Route exact path="/createNew" component={NewRecipes} />
           <Route
             exact
             path="/recipes"

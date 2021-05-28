@@ -8,14 +8,6 @@ const getAllRecipes = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
-const getAllCuisines = async (req, res) => {
-  try {
-    const cuisines = await Cuisine.find()
-    return res.status(200).json({ cuisines })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
 const getRecipeById = async (req, res) => {
   try {
     const { id } = req.params
@@ -24,18 +16,6 @@ const getRecipeById = async (req, res) => {
       return res.status(200).json({ recipe })
     }
     return res.status(404).send('Recipe with the specified ID does not exists')
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-const getCuisineById = async (req, res) => {
-  try {
-    const { id } = req.params
-    const cuisine = await Cuisine.findById(id)
-    if (cuisine) {
-      return res.status(200).json({ cuisine })
-    }
-    return res.status(404).send('Cuisine with the specified ID does not exists')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -51,7 +31,7 @@ const updateRecipe = async (req, res) => {
         if (err) {
           res.status(500).send(err)
         }
-        if (!plant) {
+        if (!recipe) {
           res.status(500).send('Recipe not found!')
         }
         return res.status(200).json(recipe)
@@ -74,10 +54,8 @@ const createRecipe = async (req, res) => {
 }
 
 module.exports = {
-  getAllCuisines,
   getAllRecipes,
   getRecipeById,
-  getCuisineById,
   updateRecipe,
   createRecipe
 }
