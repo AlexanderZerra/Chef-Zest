@@ -20,11 +20,24 @@ class NewRecipes extends Component {
   handleSubmit = async (e) => {
     e.preventDefault()
     console.log('submitted')
+    this.handleAddInstr()
+    this.handleAddIngred()
     try {
       const newRecipe = await ApiClient.post(`/recipes`, this.state)
     } catch (error) {
       throw error
     }
+    this.setState({
+      name: '',
+      description: '',
+      cuisine: '',
+      image: '',
+      ingredients: [],
+      instructions: [],
+      time: '',
+      currentIngredient: '',
+      currentInstruction: ''
+    })
   }
 
   handleChange = (e) => {

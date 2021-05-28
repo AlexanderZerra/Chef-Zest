@@ -17,6 +17,7 @@ class CreateRecipe extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault()
+
     try {
       const newRecipe = await ApiClient.post(`/recipes`, this.state)
     } catch (error) {

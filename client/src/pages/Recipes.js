@@ -3,20 +3,23 @@ import RecipeCard from '../components/RecipeCard'
 
 class Recipes extends Component {
   showRecipe = (recipe) => {
-    this.props.history.push(`/recipes/${recipe.id}`)
+    //console.log(recipe)
+    //console.log(recipe._id)
+    this.props.history.push(`/recipes/${recipe._id}`)
   }
 
   render() {
     const { recipes } = this.props
-    // return (
-    //   <div className="this"
-    //     {recipes.map((recipe)=>
-    //     <div key={recipe.id} className="card">
-    //       <img src={recipe.images}/>
 
     const recipeLists = recipes.map((recipe, index) => {
       return (
-        <RecipeCard key={index} showRecipe={this.showRecipe} recipe={recipe} />
+        <RecipeCard
+          key={index}
+          showRecipe={this.showRecipe}
+          selectRecipe={this.props.selectRecipe}
+          selectedRecipes={this.props.selectedRecipes}
+          recipe={recipe}
+        />
       )
     })
     return <div className="recipes">{recipeLists}</div>
