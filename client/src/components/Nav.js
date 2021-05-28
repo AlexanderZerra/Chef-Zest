@@ -8,7 +8,7 @@ export default class Nav extends Component {
         <h4>Navigation Bar</h4>
         <div>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/new">Recipes</NavLink>
+          <NavLink to="/recipes">Recipes</NavLink>
           <NavLink to="/createNew">Create your OWN !</NavLink>
           {/* <NavLink to="/listings">Listings</NavLink>
           <NavLink to="/new">New Boat</NavLink> */}
