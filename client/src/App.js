@@ -7,6 +7,8 @@ import NewRecipes from './pages/NewRecipes'
 import Welcome from './pages/Welcome'
 import Recipes from './pages/Recipes'
 
+import Nav from './components/Nav'
+
 import './App.css'
 
 class App extends Component {
@@ -29,6 +31,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header>
+          <Nav />
+        </header>
         <Switch>
           <Route exact path="/" component={Welcome} />
           {/* <Route exact path="/recipes" component={Recipes} /> */}

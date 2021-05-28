@@ -98,7 +98,9 @@ class NewRecipes extends Component {
           name="currentIngredient"
           placeholder="ingredients"
         />
-        <button onClick={this.handleAddIngred}>Add ingredient</button>
+        <button className="additional" onClick={this.handleAddIngred}>
+          Add ingredient
+        </button>
         <ul>
           {this['state']['ingredients'].map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
@@ -111,14 +113,18 @@ class NewRecipes extends Component {
           name="currentInstruction"
           placeholder="instructions"
         />
-        <button onClick={this.handleAddInstr}>Add instructions</button>
+        <button className="add" onClick={this.handleAddInstr}>
+          Add instructions
+        </button>
         <ol>
           {this['state']['instructions'].map((instruction, index) => (
             <li key={index}>{instruction}</li>
           ))}
         </ol>
 
-        <button onClick={this.handleSubmit}>Submit</button>
+        <button className="submit" onClick={this.handleSubmit}>
+          Submit
+        </button>
       </div>
     )
   }
